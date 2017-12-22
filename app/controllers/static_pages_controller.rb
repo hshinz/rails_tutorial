@@ -3,6 +3,7 @@ class StaticPagesController < ApplicationController
   end
 
   def help
+  	byebug
   end
 
   def about
