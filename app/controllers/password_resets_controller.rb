@@ -34,7 +34,7 @@ class PasswordResetsController < ApplicationController
       render 'edit'                                     # Case (2)
     end
   end
- private
+ 	private
 
  	def user_params
       params.require(:user).permit(:password, :password_confirmation)
@@ -55,6 +55,5 @@ class PasswordResetsController < ApplicationController
       if @user.password_reset_expired?
         flash[:danger] = "Password reset has expired."
         redirect_to new_password_reset_url
-      end
     end
 end
