@@ -17,6 +17,7 @@ class PostsController < ApplicationController
 	end
 	def show
 		@post = Post.find_by id: params[:id]
+		@comments = @post.comments.order(created_at: :desc)
 		@comment = Comment.new
 	end
 	private
