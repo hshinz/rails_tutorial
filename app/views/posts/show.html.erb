@@ -11,6 +11,10 @@
 
               <%= link_to "Read More →", post_path(@post), class: "btn btn-primary" %>
     </div>
+      <%= form_for @like do |f| %>
+        <%= f.hidden_field :post_id, value: @post.id %>
+        <button class="btn btn-primary">Like</button>
+      <% end %>
     <div class="card-footer text-muted">
       <%= render partial: "comments/form", 
           locals: {comment: @comment, post: @post} %>
